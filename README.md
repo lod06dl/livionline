@@ -1,0 +1,1 @@
+This is the code that turns into my personal website [livionline.me](livionline.me). It's mostly an excuse to poke around FastHTML, setting up servers and avoid doing the dishes while feeling productive.
