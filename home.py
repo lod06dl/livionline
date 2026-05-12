@@ -1,4 +1,5 @@
 from fasthtml.common import *
+from nav import with_nav
 
 l = [ 
         ["linkedin-svgrepo-com.svg", "https://www.linkedin.com/in/livio-de-lutio-phd-2706495b/"],
@@ -19,7 +20,7 @@ def page():
     )
     social_links = Ul(
         *[Ikn(src, href) for src, href in l],
-        cls="menu menu-horizontal bg-base-300 rounded-box px-0.5 py-0.5",
+        cls="menu menu-horizontal bg-base-100 rounded-box px-0.5 py-0.5",
     )
    
     about_me = P(
@@ -29,10 +30,19 @@ def page():
             Reach out for tech conversations, share secret kitesurfing spots, or your favourite cooking recipe. 
             If you're in Belgium, let's grab coffee!""" , cls="leading-relaxed")
     
-    return Div(
+    return with_nav(
+        Div(
             ava_livio,
-            Titled('Livio de Lutio', P("Civil engineer turned data scientist. The PhD gathers dust; the curiosity doesn't."),cls='text-center'),
-            social_links, 
+            Titled(
+                "Livio de Lutio",
+                P(
+                    "Civil engineer turned data scientist. The PhD gathers dust; the curiosity doesn't.",
+                    cls="opacity-70",
+                ),
+                cls="text-center w-full",
+            ),
+            social_links,
             about_me,
-            cls='hero flex flex-col items-center justify-center min-h-screen gap-2 max-w-[900px] mx-auto'
-            )
+            cls="hero flex flex-col items-center justify-center flex-1 gap-2 max-w-[900px] mx-auto w-full px-4",
+        )
+    )

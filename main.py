@@ -1,6 +1,5 @@
-import home
+import home, bio
 from fasthtml.common import *
-import fasthtml.components as fc
 
 daisy_hdrs = (
     Link(href='https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap', rel='stylesheet'),
@@ -10,10 +9,11 @@ daisy_hdrs = (
     Style('* { font-family: "Inter", sans-serif; }'),
 )
 
-app,rt = fast_app(hdrs=daisy_hdrs, static_path='static', title='Livio de Lutio', pico=True)
+app,rt = fast_app(hdrs=daisy_hdrs, static_path='static', title='Livio de Lutio', pico=False,     htmlkw={"data_theme": "nord"})
+# app,rt = fast_app(hdrs=daisy_hdrs, static_path='static', title='Livio de Lutio', pico=False)
 
 app.get('/')(home.page)
-# app.get('/cv')(cv.page)
+app.get('/cv')(bio.page)
 
 serve()
 
