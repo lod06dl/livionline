@@ -14,7 +14,7 @@ def Ikn(src, href, *, img_cls="h-9 w-9", **img_kw):
 def page():
     ava_livio = Div(
         Div(
-            Div( Img(src='zoo2.jpg'), cls='w-72 rounded-full'), cls='avatar'
+            Div( Img(src='Livio_cartoon.png'), cls='w-72 rounded-full'), cls='avatar'
         )
         , cls='flex justify-center items-center'
     )
