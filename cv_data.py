@@ -1,63 +1,127 @@
 from fasthtml.common import A, Span
 
 THESIS_SPIRAL_URL = "https://spiral.imperial.ac.uk/entities/publication/82a77df1-04bd-42cf-97c1-3d7b7306799a"
+NYC_STUDY_URL = "https://www.hraadvisors.com/wp-content/uploads/2024/11/HRA_NYC-Rideshare-Cost-Study_Report_11.04.pdf"
 
 EXPERIENCE = [
-    ("Applied Scientist – Policy Science", "Uber", "Jun 2022 – Apr 2026", [
-        "Responsible for external-facing earnings claims (governments, investors, press).",
-        "Commissioned external report on rideshare economics in NYC, leading to 50M+ in yearly savings in TLC pay standard negotiations.",
-        "Introduced novel odometer analysis to support marginal cost arguments in regulatory proceedings.",
-    ]),
-    ("Analytics Team Lead", "Beauty Pie", "Nov 2020 – May 2022", [
-        "Designed analytical data pipelines (DBT, Snowflake).",
-        "Built automated product demand forecast with dashboards integrated into the ERP.",
-        "Designed & analysed website A/B tests.",
-    ]),
-    ("Data Lead – Driver Team UK & Ireland", "Uber", "Jul 2019 – Aug 2020", [
-        "Delivered analyses to Government on contractor support during lockdown, informing the UK Self-Employed Income Scheme.",
-        "Scoped & launched Uber Medics for the NHS – up to 40% of trips during lockdown.",
-        "Identified a flawed A/B test in a customer support programme, which had mistakenly attributed 1.3M$ benefit",
-    ]),
-    ("Knowledge Engineer – Alexa Information UK", "Amazon", "Jun 2018 – Jan 2019", [
-        'Designed and maintained Alexa Q&A capabilities for over 15 milion customers (e.g. "What\'s on BBC One?").',
-        "First seamless third-party app integration into core Alexa, enabling scalable expansion of Alexa's abilities.",
-    ]),
-    ("Senior Analyst – Product, Data Science", "Criteo", "Sep 2016 – Jun 2018", [
-        "Market penetration analysis and opportunity sizing for investor and public communication.",
-        "Built internal R package standardising frequent data pulls; ML script for automated sales lead generation.",
-        "Trained and mentored all new analysts.",
-    ]),
-    ("Programmatic Analyst – Advertising", "eBay / Parasol Group", "Nov 2015 – May 2016", [
-        "Owned UK advertising reporting and designed a global performance tracking database.",
-        "Managed relationships with principal partners (Criteo, Google, Rubicon, OpenX, AppNexus).",
-    ]),
+    (
+        "Applied Scientist – Policy Science",
+        "Uber",
+        "Jun 2022 – Apr 2026",
+        [
+            Span(
+                "Led a third-party ",
+                A(
+                    "earnings and cost study",
+                    href=NYC_STUDY_URL,
+                    cls="link link-primary",
+                    target="_blank",
+                    rel="noopener noreferrer",
+                ),
+                " for the NYC pay-standard renegotiation.",
+            ),
+            "Pioneered an odometer-based analysis quantifying driver incremental mileage in key regulated US markets, strengthening Uber's case for accounting for marginal rather than average driver costs.",
+            "Developed and owned Uber's approved methodology for sharing driver-earnings information externally, ensuring global consistency from the CEO's interviews to regulatory data shares.",
+            "Prepared C-suite briefs on driver earnings ahead of Davos meetings and interviews.",
+        ],
+    ),
+    (
+        "Analytics Team Lead",
+        "Beauty Pie",
+        "Nov 2020 – May 2022",
+        [
+            "Joined as the second analytics hire to build the data function from the ground up; scaled and led a team of three.",
+            "Designed the analytical data layer (DBT, Snowflake) enabling end-to-end analysis of the consumer funnel, sales, and lifetime value, built from scratch.",
+            "Built a demand forecast that reduced stockouts, integrated directly into the NetSuite ERP.",
+        ],
+    ),
+    (
+        "Data Lead – Driver Team UK & Ireland",
+        "Uber",
+        "Jul 2019 – Aug 2020",
+        [
+            "Informed parts of the UK Government's Self-Employed Income Scheme, the flagship contractor-support package during lockdown.",
+            "Scoped financial-support packages and bereavement policies during the pandemic (30k drivers impacted).",
+            "Identified flaws in an A/B test of a customer-support programme.",
+        ],
+    ),
+    (
+        "Knowledge Engineer – Alexa Information UK",
+        "Amazon",
+        "Jun 2018 – Jan 2019",
+        [
+            "Sole UK knowledge engineer designing and maintaining Alexa Q&A features for the British market.",
+            'Delivered the first seamless third-party integration into Alexa UK (e.g. "What\'s on BBC One?"), which became the template for scaling Alexa capabilities with minimal internal development.',
+        ],
+    ),
+    (
+        "Senior Analyst – Product, Data Science",
+        "Criteo",
+        "Sep 2016 – Jun 2018",
+        [
+            "Analysed Criteo's global market penetration; outputs fed directly into investor earnings calls.",
+            "Built an internal R package automating analysis and slide production, saving each analyst weeks of work per quarter.",
+            "Recognised with two cash prizes: Best Innovative Project (2018) and Super Star Team Award (2017).",
+        ],
+    ),
+    (
+        "Programmatic Analyst – Advertising",
+        "eBay (contractor)",
+        "Nov 2015 – May 2016",
+        [
+            "Built a performance-tracking database across all display ad networks, covering ~10% of eBay UK revenue.",
+            "Managed partnerships with Criteo, Google, Rubicon, OpenX, and AppNexus to ensure data quality and performance.",
+        ],
+    ),
 ]
 
 SKILLS = {
-    "Languages": ["🇬🇧 English", "🇮🇹 Italian", "🇫🇷 French", "🇪🇸 Spanish (working)", "🇷🇺 Russian (basic)",],
-    "Technical":  [ "R", "Python","SQL", "DBT"],
+    "Technical": [
+        "R",
+        "Python",
+        "SQL",
+        "DBT",
+        "Snowflake",
+        "Vim",
+        "AI coding tools (Cursor, Claude, Shell Sage)",
+    ],
+    "Languages": [
+        "🇬🇧 English",
+        "🇮🇹 Italian",
+        "🇫🇷 French",
+        "🇪🇸 Spanish (conversational)",
+        "🇷🇺 Russian (basic conversational)",
+    ],
 }
 
 EDUCATION = [
-    ("PhD – Wave Mechanics", "Imperial College London", "2010 – 2017", [
-        "Fully funded under Prof. Chris Swan.",
-        Span(
-            "Thesis: ",
-            A(
-                '"Extreme waves in intermediate and shallow water depths"',
-                href=THESIS_SPIRAL_URL,
-                cls="link link-primary",
-                target="_blank",
-                rel="noopener noreferrer",
+    (
+        "PhD – Wave Mechanics",
+        "Imperial College London",
+        "2010 – 2017",
+        [
+            Span(
+                "Thesis: ",
+                A(
+                    '"Extreme waves in intermediate and shallow water depths"',
+                    href=THESIS_SPIRAL_URL,
+                    cls="link link-primary",
+                    target="_blank",
+                    rel="noopener noreferrer",
+                ),
+                ", supervised by Prof. Chris Swan. Published in the Journal of Coastal Engineering.",
             ),
-            ".",
-        ),
-        "Key areas of research: short-term statistics, wave kinematics, wave breaking.",
-    ]),
-    ("Master of Engineering | Civil Engineering, ", "École Nationale des Ponts et Chaussées (exchange)", "2009 – 2010", [
-    ]),
-    ("Master of Engineering | Civil Engineering, first class honours", "Imperial College London", "2006 – 2010", [
-    ]),
+            "Selected for McKinsey's Insight Program (top 60 UK PhDs).",
+        ],
+    ),
+    (
+        "MEng Civil Engineering – First Class Honours",
+        "Imperial College London",
+        "2006 – 2010",
+        [
+            "Exchange year at École Nationale des Ponts et Chaussées, Paris (First Class Honours).",
+        ],
+    ),
 ]
 
 AWARDS = [
@@ -67,4 +131,6 @@ AWARDS = [
     "Publication in Journal of Coastal Engineering, 2013 – Large waves in intermediate and shallow water depths.",
 ]
 
-INTERESTS = "Kite surfing · Marathon (4× California) · Sailing (qualified instructor)"
+INTERESTS = (
+    "Kitesurfing · Marathons (four run in California) · Sailing (qualified instructor)"
+)
